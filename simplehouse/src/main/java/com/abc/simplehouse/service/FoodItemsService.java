@@ -1,13 +1,47 @@
 package com.abc.simplehouse.service;
 
-import java.util.Optional;
 
-import com.abc.simplehouse.entity.FoodItem;
+import com.abc.simplehouse.model.FoodItemModel;
 
+
+/**
+ * This Service interface contains all the methods of food item.
+ * @author brahmareddy
+ * @date 05,july,2021
+ */
 public interface FoodItemsService {
 
-	public void save(FoodItem item);
+	
+	
+	/**
+	 * save-This method is used to add food item. 
+	 * @param item-The food item object
+	 * 
+	 */
+	public void save(FoodItemModel item);
 
-	public Optional<FoodItem> getById(int foodItemId);
+	/**
+	 * getById- This method is used to get item by id.
+	 * @param foodItemId
+	 * @return FoodItemModel 
+	 */
+	public FoodItemModel getById(int foodItemId);
+	
+	/**
+	 * getByName- This method is used to get item by name.
+	 * @param foodItemName
+	 * @return FoodItemModel 
+	 */
+	//public FoodItemModel getByName(String foodItemName);
+
+	
+	/**
+	 * getByName- This method is used to delete the item by id.
+	 * @param id
+	 * @return void 
+	 */
+	public void deleteItem(int itemId);
+
+	public void updateItem(int itemId);
 
 }

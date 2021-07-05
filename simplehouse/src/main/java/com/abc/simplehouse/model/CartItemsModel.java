@@ -25,7 +25,7 @@ public class CartItemsModel {
 	private FoodCartModel foodCart;
 	
 	@OneToMany 
-	private List<FoodItemsModel> foodItems= new ArrayList<>();
+	private List<FoodItemModel> foodItems= new ArrayList<>();
 
 	
 	public int getId() {
@@ -44,11 +44,11 @@ public class CartItemsModel {
 		this.quantity = quantity;
 	}
 
-	public List<FoodItemsModel> getFoodItems() {
+	public List<FoodItemModel> getFoodItems() {
 		return foodItems;
 	}
 
-	public void setFoodItems(List<FoodItemsModel> foodItems) {
+	public void setFoodItems(List<FoodItemModel> foodItems) {
 		this.foodItems = foodItems;
 	}
 

@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="foodItems_tbl")
-public class FoodItemsModel {
+public class FoodItemModel {
 	
 	@Id
 	private int itemId;
