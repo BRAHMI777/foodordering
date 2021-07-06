@@ -3,28 +3,20 @@ package com.abc.simplehouse.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="foodCart_tbl")
 public class FoodCartModel {
 	
-	@Id
+
 	private int cartId;
 	private double totalPrice;
 	
-	@OneToOne
-	private CustomerModel customer;
 	
-	@OneToMany(mappedBy="foodCart",cascade=CascadeType.ALL)
+	private CustomerModel customerModel;
+	
+	
 	private List<CartItemsModel> cartItems=new ArrayList<>();
 	
-	@OneToMany(mappedBy="foodCart",cascade=CascadeType.ALL)
+	
 	private List<OrderModel> order=new ArrayList<>();
 
 	
@@ -48,12 +40,15 @@ public class FoodCartModel {
 		this.totalPrice = totalPrice;
 	}
 
-	public CustomerModel getCustomer() {
-		return customer;
+	
+	
+
+	public CustomerModel getCustomerModel() {
+		return customerModel;
 	}
 
-	public void setCustomer(CustomerModel customer) {
-		this.customer = customer;
+	public void setCustomerModel(CustomerModel customerModel) {
+		this.customerModel = customerModel;
 	}
 
 	public List<CartItemsModel> getCartItems() {

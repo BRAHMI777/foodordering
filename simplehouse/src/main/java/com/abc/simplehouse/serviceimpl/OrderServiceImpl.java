@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.abc.simplehouse.entity.Order;
+import com.abc.simplehouse.model.OrderModel;
 import com.abc.simplehouse.repository.OrderRepository;
 import com.abc.simplehouse.service.OrderService;
 
@@ -17,7 +18,11 @@ public class OrderServiceImpl implements OrderService {
 	private OrderRepository orderRepository;
 	
 	@Override
-	public void createOrder(Order order) {
+	public void createOrder(OrderModel orderModel) {
+		Order order=new Order();
+		order.setId(orderModel.getId());
+		order.setOrderDate(orderModel.getOrderDate());
+		
 		orderRepository.save(order);
 		
 	}

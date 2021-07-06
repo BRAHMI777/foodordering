@@ -1,39 +1,24 @@
 package com.abc.simplehouse.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="order_tbl")
 public class OrderModel {
-	@Id
+
 	private int Id;
 	private LocalDate OrderDate;
 	private double totalCost;
 	
-	@OneToMany(mappedBy="order",cascade=CascadeType.ALL)
-	private List<OrderItemModel> orderItems=new ArrayList<>();
+	private CustomerModel customerModel;
 	
+	private List<OrderItemModel> orderItemModel;
 	
-	 @ManyToOne
-	 @JoinColumn(name="customerId")
-     private CustomerModel customer;
+	private PaymentModel paymentModel;
 	
-	@OneToOne
-	private PaymentModel payment;
+	private FoodCartModel foodCartModel;
 	
-	@ManyToOne
-	private FoodCartModel foodCart;
+
 	
 	
 	public int getId() {
@@ -48,23 +33,30 @@ public class OrderModel {
 	public void setTotalCost(double totalCost) {
 		this.totalCost = totalCost;
 	}
-	public List<OrderItemModel> getOrderItems() {
-		return orderItems;
+	
+	public CustomerModel getCustomerModel() {
+		return customerModel;
 	}
-	public void setOrderItems(List<OrderItemModel> orderItems) {
-		this.orderItems = orderItems;
+	public void setCustomerModel(CustomerModel customerModel) {
+		this.customerModel = customerModel;
 	}
-	public CustomerModel getCustomer() {
-		return customer;
+	public List<OrderItemModel> getOrderItemModel() {
+		return orderItemModel;
 	}
-	public void setCustomer(CustomerModel customer) {
-		this.customer = customer;
+	public void setOrderItemModel(List<OrderItemModel> orderItemModel) {
+		this.orderItemModel = orderItemModel;
 	}
-	public PaymentModel getPayment() {
-		return payment;
+	public PaymentModel getPaymentModel() {
+		return paymentModel;
 	}
-	public void setPayment(PaymentModel payment) {
-		this.payment = payment;
+	public void setPaymentModel(PaymentModel paymentModel) {
+		this.paymentModel = paymentModel;
+	}
+	public FoodCartModel getFoodCartModel() {
+		return foodCartModel;
+	}
+	public void setFoodCartModel(FoodCartModel foodCartModel) {
+		this.foodCartModel = foodCartModel;
 	}
 	public int getOrderId() {
 		return Id;

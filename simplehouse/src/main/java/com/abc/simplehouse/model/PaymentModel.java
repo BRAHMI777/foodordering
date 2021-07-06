@@ -2,24 +2,24 @@ package com.abc.simplehouse.model;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="payment_tbl")
 public class PaymentModel {
 	
-	@Id
+	
 	private int paymentId;
 	private LocalDate paymentDate;
 	private double paymentAmount;
 	private String paymentStatus;
+	private OrderModel Id;
 	
-	@OneToOne
-	private OrderModel order;
 	
+	
+	public OrderModel getId() {
+		return Id;
+	}
+	public void setId(OrderModel id) {
+		Id = id;
+	}
 	public int getPaymentId() {
 		return paymentId;
 	}

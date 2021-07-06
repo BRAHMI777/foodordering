@@ -18,7 +18,7 @@ public class Customer {
 	private int customerId;
 	private String customerFirstName;
 	private String customerLastName;
-	private String adress;
+	private String address;
 	private String customerEmail;
 	private String phoneNumber;
 	private String customerPassword;
@@ -60,10 +60,10 @@ public class Customer {
 		this.customerLastName = customerLastName;
 	}
 	public String getAdress() {
-		return adress;
+		return address;
 	}
 	public void setAdress(String adress) {
-		this.adress = adress;
+		this.address = adress;
 	}
 	public String getCustomerEmail() {
 		return customerEmail;

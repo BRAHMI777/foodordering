@@ -1,12 +1,14 @@
 package com.abc.simplehouse.service;
 
 
+import java.util.List;
+
 import com.abc.simplehouse.model.FoodItemModel;
 
 
 /**
  * This Service interface contains all the methods of food item.
- * @author brahmareddy
+ * @author BrahmanandaReddy
  * @date 05,july,2021
  */
 public interface FoodItemsService {
@@ -42,6 +44,19 @@ public interface FoodItemsService {
 	 */
 	public void deleteItem(int itemId);
 
+	
+	/**
+	 * updateItem-This method is used to update the item details.
+	 * @param itemId
+	 * 
+	 */
 	public void updateItem(int itemId);
+
+	/**
+	 * getAllItems-This method is used to get all products.
+	 * @param itemId
+	 * 
+	 */
+	public List<FoodItemModel> getAllItems();
 
 }

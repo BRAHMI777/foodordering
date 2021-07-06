@@ -1,24 +1,16 @@
 package com.abc.simplehouse.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="orderItem_tbl")
 public class OrderItemModel {
 	
-	@Id
+
 	private int id;
 	private int quantity;
 	
-	@OneToOne
-	private FoodItemModel items;
 	
-	@ManyToOne
-	private OrderModel order;
+	private FoodItemModel foodItemModel;
+	
+	
+	private OrderModel orderModel;
 
 	
 	public int getId() {
@@ -37,21 +29,23 @@ public class OrderItemModel {
 		this.quantity = quantity;
 	}
 
-	public FoodItemModel getItems() {
-		return items;
+	public FoodItemModel getFoodItemModel() {
+		return foodItemModel;
 	}
 
-	public void setItems(FoodItemModel items) {
-		this.items = items;
+	public void setFoodItemModel(FoodItemModel foodItemModel) {
+		this.foodItemModel = foodItemModel;
 	}
 
-	public OrderModel getOrder() {
-		return order;
+	public OrderModel getOrderModel() {
+		return orderModel;
 	}
 
-	public void setOrder(OrderModel order) {
-		this.order = order;
+	public void setOrderModel(OrderModel orderModel) {
+		this.orderModel = orderModel;
 	}
+
+	
 	
 
 }

@@ -1,14 +1,9 @@
 package com.abc.simplehouse.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="foodItems_tbl")
 public class FoodItemModel {
 	
-	@Id
+
 	private int itemId;
 	private String itemName;
 	private String itemType;

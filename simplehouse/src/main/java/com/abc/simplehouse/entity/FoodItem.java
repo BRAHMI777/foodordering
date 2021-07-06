@@ -1,16 +1,24 @@
 package com.abc.simplehouse.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+/**
+ * 
+ * @author BrahmanandaReddy
+ * 03-Jul-2021
+ */
 @Entity
 @Table(name="FOODITEM_TBL")
 public class FoodItem {
 	
 	@Id
-	@NotNull(message="Item Id is missing")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	//@NotNull(message="Item Id is missing")
 	private int itemId;
 	@NotNull(message="Item name is missing")
 	private String itemName;
@@ -18,6 +26,7 @@ public class FoodItem {
 	private String itemType;
 	@NotNull(message="Item price is missing")
 	private double itemPrice;
+	
 	public int getItemId() {
 		return itemId;
 	}

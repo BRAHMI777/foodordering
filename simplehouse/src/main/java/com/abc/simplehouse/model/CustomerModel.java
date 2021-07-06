@@ -3,41 +3,37 @@ package com.abc.simplehouse.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="customer_tbl")
 public class CustomerModel {
 	
-	@Id
+
 	private int customerId;
-	private String customerName;
+	private String customerFirstName;
+	private String customerLastName;
+	private String address;
 	private String customerEmail;
 	private String phoneNumber;
 	private String customerPassword;
 	
-	@OneToOne
-	private FoodCartModel cart;
 	
-	@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
-    private List<OrderModel> order=new ArrayList<>();
+	private FoodCartModel foodCartModel;
 	
-	public FoodCartModel getCart() {
-		return cart;
+
+    private List<OrderModel> orderModel=new ArrayList<>();
+	
+
+	
+	public FoodCartModel getFoodCartModel() {
+		return foodCartModel;
 	}
-	public void setCart(FoodCartModel cart) {
-		this.cart = cart;
+	public void setFoodCartModel(FoodCartModel foodCartModel) {
+		this.foodCartModel = foodCartModel;
 	}
-	public List<OrderModel> getOrder() {
-		return order;
+	public List<OrderModel> getOrderModel() {
+		return orderModel;
 	}
-	public void setOrder(List<OrderModel> order) {
-		this.order = order;
+	public void setOrderModel(List<OrderModel> orderModel) {
+		this.orderModel = orderModel;
 	}
 	public int getCustomerId() {
 		return customerId;
@@ -45,11 +41,24 @@ public class CustomerModel {
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-	public String getCustomerName() {
-		return customerName;
+	
+	public String getCustomerFirstName() {
+		return customerFirstName;
 	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	public void setCustomerFirstName(String customerFirstName) {
+		this.customerFirstName = customerFirstName;
+	}
+	public String getCustomerLastName() {
+		return customerLastName;
+	}
+	public void setCustomerLastName(String customerLastName) {
+		this.customerLastName = customerLastName;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getCustomerEmail() {
 		return customerEmail;
@@ -69,7 +78,5 @@ public class CustomerModel {
 	public void setCustomerPassword(String customerPassword) {
 		this.customerPassword = customerPassword;
 	}
-	
-	
 
 }

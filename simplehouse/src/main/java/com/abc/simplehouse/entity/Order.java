@@ -18,11 +18,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ORDER_TBL")
 public class Order {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	private LocalDate orderDate;
+	private LocalDate orderDate;   //2007-12-03. 
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<OrderItem> orderItems = new ArrayList<>();

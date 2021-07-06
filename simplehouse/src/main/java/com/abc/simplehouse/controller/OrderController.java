@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.abc.simplehouse.entity.Order;
+import com.abc.simplehouse.model.OrderModel;
 import com.abc.simplehouse.service.OrderService;
 
 @RestController
@@ -22,9 +23,9 @@ public class OrderController {
 	private OrderService orderService;
 	
 	@PostMapping("/addorder")
-	public void createOrder(@RequestBody Order order)
+	public void createOrder(@RequestBody OrderModel orderModel)
 	{
-		orderService.createOrder(order);
+		orderService.createOrder(orderModel);
 	}
 	
 	@GetMapping("/allorders")

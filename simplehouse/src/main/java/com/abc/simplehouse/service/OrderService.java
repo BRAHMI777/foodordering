@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import com.abc.simplehouse.entity.Order;
+import com.abc.simplehouse.model.OrderModel;
 
 public interface OrderService {
 
-	public void createOrder(Order order);
+	public void createOrder(OrderModel orderModel);
 
 	public List<Order> fetchAllOrders();
 

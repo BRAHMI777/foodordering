@@ -4,28 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-
-@Entity
-@Table(name="cartItems_tbl")
 public class CartItemsModel {
 	
-	@Id
+
 	private int id;
 	private int quantity;
 	
-	@ManyToOne
-	@JoinColumn(name="cartId")
-	private FoodCartModel foodCart;
 	
-	@OneToMany 
-	private List<FoodItemModel> foodItems= new ArrayList<>();
+	private FoodCartModel foodCartModel;
+	
+
+	private List<FoodItemModel> foodItemModel= new ArrayList<>();
 
 	
 	public int getId() {
@@ -44,13 +34,23 @@ public class CartItemsModel {
 		this.quantity = quantity;
 	}
 
-	public List<FoodItemModel> getFoodItems() {
-		return foodItems;
+	public FoodCartModel getFoodCartModel() {
+		return foodCartModel;
 	}
 
-	public void setFoodItems(List<FoodItemModel> foodItems) {
-		this.foodItems = foodItems;
+	public void setFoodCartModel(FoodCartModel foodCartModel) {
+		this.foodCartModel = foodCartModel;
 	}
+
+	public List<FoodItemModel> getFoodItemModel() {
+		return foodItemModel;
+	}
+
+	public void setFoodItemModel(List<FoodItemModel> foodItemModel) {
+		this.foodItemModel = foodItemModel;
+	}
+
+
 
 
 }
